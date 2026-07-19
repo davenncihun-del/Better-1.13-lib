@@ -1,0 +1,12 @@
+{
+  "methods": {
+    "func_180633_a": "onBlockActivated",
+    "func_70097_a": "attackEntityFrom",
+    "func_180495_a": "getStateFromMeta",
+    "func_176201_c": "getMetaFromState"
+  },
+  "fields": {
+    "field_150350_a": "AIR",
+    "field_150348_b": "STONE"
+  }
+}
