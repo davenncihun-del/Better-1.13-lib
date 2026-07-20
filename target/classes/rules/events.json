@@ -1,0 +1,16 @@
+{
+  "events": {
+    "FMLPreInitializationEvent": {
+      "replacement": "FMLCommonSetupEvent",
+      "subscribeEvent": true
+    },
+    "FMLInitializationEvent": {
+      "replacement": "InterModEnqueueEvent",
+      "subscribeEvent": true
+    },
+    "FMLPostInitializationEvent": {
+      "replacement": "InterModProcessEvent",
+      "subscribeEvent": true
+    }
+  }
+}

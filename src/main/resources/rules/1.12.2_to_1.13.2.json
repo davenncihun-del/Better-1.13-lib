@@ -1,0 +1,40 @@
+{
+  "fromVersion": "1.12.2",
+  "toVersion": "1.13.2",
+  "loader": "forge",
+  "rules": [
+    {
+      "id": "world-getblockstate-flatten",
+      "kind": "METHOD_CALL_ARGS_TO_OBJECT",
+      "receiverTypes": ["net.minecraft.world.World", "net.minecraft.world.IBlockAccess"],
+      "methodName": "getBlockState",
+      "matchSignature": ["int", "int", "int"],
+      "wrapperConstructor": "net.minecraft.util.math.BlockPos",
+      "direction": "forward",
+      "inverse": "world-getblockstate-unflatten",
+      "reason": "World#getBlockState(int,int,int) was replaced by World#getBlockState(BlockPos) in 1.13."
+    },
+    {
+      "id": "world-setblockstate-flatten",
+      "kind": "METHOD_CALL_ARGS_TO_OBJECT",
+      "receiverTypes": ["net.minecraft.world.World"],
+      "methodName": "setBlockState",
+      "matchSignature": ["int", "int", "int"],
+      "wrapperConstructor": "net.minecraft.util.math.BlockPos",
+      "direction": "forward",
+      "inverse": "world-setblockstate-unflatten",
+      "reason": "World#setBlockState(int,int,int,...) was replaced by World#setBlockState(BlockPos,...) in 1.13."
+    },
+    {
+      "id": "world-getblockmeta-flatten",
+      "kind": "METHOD_CALL_ARGS_TO_OBJECT",
+      "receiverTypes": ["net.minecraft.world.World"],
+      "methodName": "getBlockMetadata",
+      "matchSignature": ["int", "int", "int"],
+      "wrapperConstructor": "net.minecraft.util.math.BlockPos",
+      "direction": "forward",
+      "inverse": null,
+      "reason": "getBlockMetadata(int,int,int) was removed in 1.13; block state now carries metadata via BlockPos-addressed getBlockState()."
+    }
+  ]
+}

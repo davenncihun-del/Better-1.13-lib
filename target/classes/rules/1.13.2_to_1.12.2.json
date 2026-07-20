@@ -1,0 +1,29 @@
+{
+  "fromVersion": "1.13.2",
+  "toVersion": "1.12.2",
+  "loader": "forge",
+  "rules": [
+    {
+      "id": "world-getblockstate-unflatten",
+      "kind": "METHOD_CALL_OBJECT_TO_ARGS",
+      "receiverTypes": ["net.minecraft.world.World", "net.minecraft.world.IBlockAccess"],
+      "methodName": "getBlockState",
+      "matchSignature": ["net.minecraft.util.math.BlockPos"],
+      "unwrapAccessors": ["getX", "getY", "getZ"],
+      "direction": "backward",
+      "inverse": "world-getblockstate-flatten",
+      "reason": "Downporting to 1.12.2: World#getBlockState(BlockPos) does not exist; expand to the flat-coordinate overload."
+    },
+    {
+      "id": "world-setblockstate-unflatten",
+      "kind": "METHOD_CALL_OBJECT_TO_ARGS",
+      "receiverTypes": ["net.minecraft.world.World"],
+      "methodName": "setBlockState",
+      "matchSignature": ["net.minecraft.util.math.BlockPos"],
+      "unwrapAccessors": ["getX", "getY", "getZ"],
+      "direction": "backward",
+      "inverse": "world-setblockstate-flatten",
+      "reason": "Downporting to 1.12.2: World#setBlockState(BlockPos,...) does not exist; expand to the flat-coordinate overload."
+    }
+  ]
+}

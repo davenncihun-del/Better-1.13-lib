@@ -1,5 +1,6 @@
 package com.better113.rules;
 
+import com.better113.engine.MigrationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -9,16 +10,21 @@ import java.io.InputStream;
 public class RuleLoader {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static JsonNode loadMappings() {
+    public static JsonNode loadMappings(MigrationContext context) {
         return loadJson("rules/mappings.json");
     }
 
-    public static JsonNode loadBlocks() {
+    public static JsonNode loadBlocks(MigrationContext context) {
         return loadJson("rules/blocks.json");
     }
 
-    public static JsonNode loadEvents() {
+    public static JsonNode loadEvents(MigrationContext context) {
         return loadJson("rules/events.json");
+    }
+
+    public static JsonNode loadAdvancedRules(MigrationContext context) {
+        String filename = context.getSourceVersion() + "_to_" + context.getTargetVersion() + ".json";
+        return loadJson("rules/" + filename);
     }
 
     private static JsonNode loadJson(String resourcePath) {

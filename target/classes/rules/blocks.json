@@ -1,0 +1,24 @@
+{
+  "block_states": {
+    "Blocks.WOOL": {
+      "metadata": {
+        "0": "Blocks.WHITE_WOOL",
+        "1": "Blocks.ORANGE_WOOL",
+        "2": "Blocks.MAGENTA_WOOL",
+        "3": "Blocks.LIGHT_BLUE_WOOL",
+        "4": "Blocks.YELLOW_WOOL",
+        "5": "Blocks.LIME_WOOL",
+        "6": "Blocks.PINK_WOOL",
+        "7": "Blocks.GRAY_WOOL",
+        "8": "Blocks.LIGHT_GRAY_WOOL",
+        "9": "Blocks.CYAN_WOOL",
+        "10": "Blocks.PURPLE_WOOL",
+        "11": "Blocks.BLUE_WOOL",
+        "12": "Blocks.BROWN_WOOL",
+        "13": "Blocks.GREEN_WOOL",
+        "14": "Blocks.RED_WOOL",
+        "15": "Blocks.BLACK_WOOL"
+      }
+    }
+  }
+}
